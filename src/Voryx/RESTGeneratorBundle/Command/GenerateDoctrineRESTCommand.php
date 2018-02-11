@@ -30,6 +30,9 @@ class GenerateDoctrineRESTCommand extends GenerateDoctrineCrudCommand
      */
     private $formGenerator;
 
+    /** @var string $defaultName */
+    protected static $defaultName = 'voryx:generate:rest'; // Make command lazy load
+
     /**
      * @see Command
      */
@@ -65,7 +68,7 @@ You can check https://github.com/sensio/SensioGeneratorBundle/tree/master/Resour
 in order to know the file structure of the skeleton
 EOT
             )
-            ->setName('voryx:generate:rest')
+            ->setName(self::$defaultName)
             ->setAliases(array('generate:voryx:rest'));
     }
 
