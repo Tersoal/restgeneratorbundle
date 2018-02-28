@@ -26,10 +26,10 @@
 {% endif %}
      *   },
      *   statusCodes = {
-     *     200 = "Updated object.",
-     *     400 = "Bad Request. Verify your params.",
-     *     404 = "Not Found.",
-     *     500 = "Form has errors."
+     *       200 = "Updated object.",
+     *       400 = "Bad Request. Verify your params.",
+     *       404 = "Not Found.",
+     *       500 = "Form has errors."
      *   }
      * )
      *
@@ -69,6 +69,7 @@
             $form = $this->createForm({{ entity }}Type::class, $entity, array("method" => $request->getMethod()));
             $this->removeExtraFields($request, $form);
             $form->handleRequest($request);
+
             if ($form->isValid()) {
                 $em->flush();
 

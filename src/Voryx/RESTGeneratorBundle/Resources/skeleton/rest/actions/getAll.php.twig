@@ -22,8 +22,8 @@
 {% endif %}
      *   },
      *   statusCodes = {
-     *     200 = "List of {{ entity }}",
-     *     204 = "No content. Nothing to list."
+     *       200 = "List of {{ entity }}",
+     *       204 = "No content. Nothing to list."
      *   }
      * )
      *
@@ -46,14 +46,13 @@
      * @param Request $request
      * @param ParamFetcherInterface $paramFetcher
      *
-     * @return FOSView|Response
-{%- if hateoas -%}
-    |PaginatedRepresentation
-{% endif %}
-     *
 {% if hateoas %}
+     * @return FOSView|Response|PaginatedRepresentation
+     *
      * @QueryParam(name="page", requirements="\d+", default="1", description="Page to return.")
 {% else %}
+     * @return FOSView|Response
+     *
      * @QueryParam(name="offset", requirements="\d+", nullable=true, description="Offset from which to start listing entities.")
 {% endif %}
      * @QueryParam(name="limit", requirements="\d+", default="20", description="How many entities to return.")
