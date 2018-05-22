@@ -1,6 +1,6 @@
 {
     "name": "voryx/restgeneratorbundle",
-    "description": "REST API Generator for Symfony 2",
+    "description": "REST API Generator for Symfony",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
@@ -12,11 +12,11 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "sensio/generator-bundle": "~3.0",
-        "friendsofsymfony/rest-bundle": "~2.0",
-        "jms/serializer-bundle": "~1.1",
-        "nelmio/cors-bundle": "~1.4 "
+        "php": "^5.4|^7.0",
+        "sensio/generator-bundle": "^3.0",
+        "friendsofsymfony/rest-bundle": "^2.0",
+        "jms/serializer-bundle": "^1.1 || ^2.0",
+        "nelmio/cors-bundle": "^1.5"
     },
     "autoload": {
         "psr-0": {
@@ -25,7 +25,7 @@
     },
     "extra" : {
         "branch-alias" : {
-            "dev-master" : "0.2-dev"
+            "dev-master" : "0.5-dev"
         }
     }
 }
